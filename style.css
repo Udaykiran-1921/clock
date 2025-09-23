@@ -4,7 +4,7 @@ body {
       align-items: center;
       background-image:url(https://w0.peakpx.com/wallpaper/582/539/HD-wallpaper-beautiful-nature-view.jpg);
       background-size: cover;
-      color: white;
+      color: rgb(253, 251, 251);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin-top: 100px;
     }
@@ -12,11 +12,11 @@ body {
         display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 20px;
-      font-weight: italic;
-      background-color: black;
-      height: 50px;
-      width: 150px;
+      font-size: 50px;
+      font-weight: bold;
+      background: none;
+      height: 100px;
+      width: 400px;
       border-radius: 20px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
@@ -29,10 +29,10 @@ body {
 
 .alarm-box {
   margin-top: 20px;
-  background: rgba(0,0,0,0.6);
+  background: none;
   padding: 15px;
   border-radius: 15px;
-  color: white;
+  color: rgb(255, 254, 254);
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
@@ -48,6 +48,11 @@ body {
 }
 
 .alarm-box button {
-  background: #00ffcc;
+  background: hsl(130, 100%, 50%);
   cursor: pointer;
+  color:rgb(0, 12, 12);
+}
+.stop button{
+  background: red;
+  color: azure;
 }

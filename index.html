@@ -18,16 +18,21 @@
         <option value="AM">AM</option>
         <option value="PM">PM</option>
       </select>
-      <button onclick="setAlarm()">Set Alarm</button>
+       <input type="text" id="alarmName" placeholder="Alarm name">
+      <div>
+      <button onclick="setAlarm()">Add Alarm</button>
+      </div>
+      <div class="stop">
       <button onclick="stopAlarm()">Stop Alarm</button>
+      </div>
       <p id="alarmStatus"></p>
+      <ul id="alarmList"></ul>
     </div>
   </div>
 
   <!-- Alarm sound -->
-  <audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto" loop></audio>
+  <audio id="alarmSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto" loop></audio>
 
   <script src="script.js"></script>
-
 </body>
 </html>
