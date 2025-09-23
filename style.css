@@ -20,3 +20,34 @@ body {
       border-radius: 20px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
     }
+    .clock-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.alarm-box {
+  margin-top: 20px;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.alarm-box input,
+.alarm-box select,
+.alarm-box button {
+  margin: 5px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+}
+
+.alarm-box button {
+  background: #00ffcc;
+  cursor: pointer;
+}

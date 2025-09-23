@@ -8,9 +8,26 @@
 
 </head>
 <body>
-  <div class="clock" id="clock">00:00:00</div>
+  <div class="clock-container">
+    <div class="clock" id="clock">00:00:00 AM</div>
+
+    <div class="alarm-box">
+      <label for="alarmTime">Set Alarm:</label>
+      <input type="time" id="alarmTime">
+      <select id="ampm">
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select>
+      <button onclick="setAlarm()">Set Alarm</button>
+      <button onclick="stopAlarm()">Stop Alarm</button>
+      <p id="alarmStatus"></p>
+    </div>
+  </div>
+
+  <!-- Alarm sound -->
+  <audio id="alarmSound" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto" loop></audio>
 
   <script src="script.js"></script>
-  
+
 </body>
 </html>
