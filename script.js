@@ -26,6 +26,22 @@ function updateClock() {
   const currentTime = `${h}:${m}:${s} ${ampm}`;
   document.getElementById('clock').textContent = currentTime;
 
+   // India (Asia/Kolkata)
+  document.getElementById("indiaTime").textContent =
+    now.toLocaleTimeString("en-US", { timeZone: "Asia/Kolkata" });
+
+  // USA (New York)
+  document.getElementById("usaTime").textContent =
+    now.toLocaleTimeString("en-US", { timeZone: "America/New_York" });
+
+  // Oman (Asia/Muscat)
+  document.getElementById("omanTime").textContent =
+    now.toLocaleTimeString("en-US", { timeZone: "Asia/Muscat" });
+
+  // Dubai (Asia/Dubai)
+  document.getElementById("dubaiTime").textContent =
+    now.toLocaleTimeString("en-US", { timeZone: "Asia/Dubai" });
+    
   // Check all alarms
   alarms.forEach(alarm => {
     if (`${h}:${m} ${ampm}` === alarm.time && s === "00" && !alarmActive) {
@@ -88,7 +104,24 @@ function stopAlarm() {
   sound.pause();
   sound.currentTime = 0;
   document.getElementById("alarmStatus").textContent = "✅ Alarm stopped";
+  window.alert("alarm stopped");
 }
 
 setInterval(updateClock, 1000);
 updateClock();
+
+// Tab Switching
+const footerItems = document.querySelectorAll('.footer-item');
+const tabs = document.querySelectorAll('.tab-content');
+
+footerItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // remove active from all
+    footerItems.forEach(f => f.classList.remove('active'));
+    tabs.forEach(t => t.classList.remove('active'));
+
+    // add active to clicked one
+    item.classList.add('active');
+    document.getElementById(item.dataset.target).classList.add('active');
+  });
+});

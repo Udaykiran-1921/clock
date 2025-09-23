@@ -6,8 +6,26 @@ body {
       background-size: cover;
       color: rgb(253, 251, 251);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin-top: 100px;
+     
+
     }
+
+
+  
+/* all elements start */
+/* Hide all tabs by default */
+.tab-content {
+  display: none;
+}
+
+/* Show only active one */
+.tab-content.active {
+  display: block;
+}
+/*all elements */
+
+/*alarm css properties start*/
+/* Clock styling */
     .clock {
         display: flex;
       justify-content: center;
@@ -19,20 +37,15 @@ body {
       width: 400px;
       border-radius: 20px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+       margin-top: 100px;
     }
-    .clock-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
+   
 .alarm-box {
   margin-top: 20px;
   background: none;
   padding: 15px;
   border-radius: 15px;
-  color: rgb(255, 254, 254);
+  color: rgb(255, 255, 255);
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
@@ -47,7 +60,7 @@ body {
   font-size: 14px;
 }
 
-.alarm-box button {
+.set button {
   background: hsl(130, 100%, 50%);
   cursor: pointer;
   color:rgb(0, 12, 12);
@@ -56,3 +69,81 @@ body {
   background: red;
   color: azure;
 }
+/* alarm css properties end*/
+
+/* Footer styles */
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #111;
+  color: white;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 10px;
+}
+
+.footer-item {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: background 0.3s, color 0.3s;
+}
+.footer-item.active {
+  background: #eef1f1;
+  color: #111;
+  font-weight: bold;
+}
+
+.footer-item:hover {
+  background: #2295f4;
+}
+/* footer css properties end*/
+
+/*world clock start*/
+/*.world-clock {
+     display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 50px;
+      font-weight: bold;
+      background: none;
+      height: 100px;
+      width: 400px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}*/
+.city
+{
+   display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      background:none;
+      height: 100px;
+      width: 400px;
+      border-radius: 20px;
+      box-shadow: 0px 8px 25px rgba(0,0,0,0.5);
+
+}
+
+/*.city {
+  background: rgba(0,0,0,0.7);
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  min-width: 120px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+/*world clock end*/

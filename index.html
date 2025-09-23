@@ -3,32 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-  <title>Live Clock</title>
-
+  <title>Clock App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="clock-container">
-    <div class="clock" id="clock">00:00:00 AM</div>
+  <div class="main-container">
+    
+    <!-- Alarm Section -->
+    <section id="alarm" class="tab-content active">
+      <div class="clock" id="clock">00:00:00 AM</div>
+      <div class="alarm-box">
+        <label for="alarmTime">Set Alarm:</label>
+        <input type="time" id="alarmTime">
+        <select id="ampm">
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select><br>
+        <input type="text" id="alarmName" placeholder="Alarm name">
+        <div class="set">
+        <button onclick="setAlarm()">Add Alarm</button>
+        </div>
+        <div class="stop">
+        <button onclick="stopAlarm()">Stop Alarm</button>
+        </div>
+        <p id="alarmStatus"></p>
+        <ul id="alarmList"></ul>
+      </div>
+    </section>
 
-    <div class="alarm-box">
-      <label for="alarmTime">Set Alarm:</label>
-      <input type="time" id="alarmTime">
-      <select id="ampm">
-        <option value="AM">AM</option>
-        <option value="PM">PM</option>
-      </select>
-       <input type="text" id="alarmName" placeholder="Alarm name">
-      <div>
-      <button onclick="setAlarm()">Add Alarm</button>
-      </div>
-      <div class="stop">
-      <button onclick="stopAlarm()">Stop Alarm</button>
-      </div>
-      <p id="alarmStatus"></p>
-      <ul id="alarmList"></ul>
+    <!-- World Clock Section -->
+   <!-- World Clock Section -->
+<section id="worldclock" class="tab-content">
+ <center><h1>world clock</h1></center> 
+  <div class="world-clock">
+    <div class="city">
+      🇮🇳 India-<p id="indiaTime"> --:--:--</p>
+    </div><br>
+    <div class="city">
+      🇺🇸 USA-<p id="usaTime"> --:--:--</p>
+    </div><br>
+    <div class="city">
+      🇴🇲 Oman-<p id="omanTime"> --:--:--</p>
     </div>
+     <div class="city">
+      db dubai-<p id="dubaiTime"> --:--:--</p>
+    </div>
+    
   </div>
+</section>
+
+    <!-- Stopwatch Section -->
+    <section id="stopwatch" class="tab-content">
+      <h2>⏱ Stopwatch</h2>
+      <p>(Stopwatch functionality will go here)</p>
+    </section>
+
+    <!-- Timer Section -->
+    <section id="timer" class="tab-content">
+      <h2>⌛ Timer</h2>
+      <p>(Timer functionality will go here)</p>
+    </section>
+
+  </div>
+
+  <!-- Footer navigation -->
+  <footer class="footer">
+    <div class="footer-item active" data-target="alarm">⏰<br> Alarm</div>
+    <div class="footer-item" data-target="worldclock">🌍 <br>World Clock</div>
+    <div class="footer-item" data-target="stopwatch">⏱<br> Stopwatch</div>
+    <div class="footer-item" data-target="timer">⌛<br> Timer</div>
+  </footer>
 
   <!-- Alarm sound -->
   <audio id="alarmSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto" loop></audio>
