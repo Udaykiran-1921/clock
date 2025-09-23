@@ -46,7 +46,7 @@
       🇴🇲 Oman-<p id="omanTime"> --:--:--</p>
     </div>
      <div class="city">
-      db dubai-<p id="dubaiTime"> --:--:--</p>
+      🇦🇪 Dubai-<p id="dubaiTime"> --:--:--</p>
     </div>
     
   </div>
@@ -54,15 +54,38 @@
 
     <!-- Stopwatch Section -->
     <section id="stopwatch" class="tab-content">
-      <h2>⏱ Stopwatch</h2>
-      <p>(Stopwatch functionality will go here)</p>
-    </section>
+  
+  <div class="stopwatch-container">
+    <center><h2>⏱ Stopwatch</h2></center>
+    <div id="stopwatchDisplay">00:00:00</div>
+    <div class="stopwatch-buttons">
+      <button onclick="startStopwatch()">Start</button>
+      <button onclick="stopStopwatch()">Stop</button>
+      <button onclick="resetStopwatch()">Reset</button>
+    </div>
+  </div>
+</section>
 
     <!-- Timer Section -->
-    <section id="timer" class="tab-content">
-      <h2>⌛ Timer</h2>
-      <p>(Timer functionality will go here)</p>
-    </section>
+    <!-- Timer Section -->
+<section id="timer" class="tab-content">
+ 
+  <div class="timer-container">
+     <h2>⌛ Timer</h2>
+    <div class="timer-inputs">
+      <input type="number" id="timerHours" placeholder="HH" min="0">
+      <input type="number" id="timerMinutes" placeholder="MM" min="0" max="59">
+      <input type="number" id="timerSeconds" placeholder="SS" min="0" max="59">
+    </div>
+    <div id="timerDisplay">00:00:00</div>
+    <div class="timer-buttons">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="stopTimer()">Stop</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+  </div>
+</section>
+
 
   </div>
 

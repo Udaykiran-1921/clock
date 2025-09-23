@@ -147,3 +147,81 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 /*world clock end*/
+
+.stopwatch-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#stopwatchDisplay {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  background: black;
+  color: lime;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display:inline-flex;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.stopwatch-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #00ffcc;
+  transition: background 0.3s;
+}
+
+.stopwatch-buttons button:hover {
+  background: #00cc99;
+}
+
+/*timer css properties strat*/
+.timer-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.timer-inputs {
+  margin-bottom: 15px;
+}
+
+.timer-inputs input {
+  width: 60px;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
+}
+
+#timerDisplay {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  background: black;
+  color: orange;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-flex;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.timer-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  background: #ffcc00;
+  transition: background 0.3s;
+}
+
+.timer-buttons button:hover {
+  background: #e6b800;
+}
+/*timer css properties end*/

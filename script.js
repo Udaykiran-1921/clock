@@ -41,7 +41,7 @@ function updateClock() {
   // Dubai (Asia/Dubai)
   document.getElementById("dubaiTime").textContent =
     now.toLocaleTimeString("en-US", { timeZone: "Asia/Dubai" });
-    
+
   // Check all alarms
   alarms.forEach(alarm => {
     if (`${h}:${m} ${ampm}` === alarm.time && s === "00" && !alarmActive) {
@@ -109,6 +109,118 @@ function stopAlarm() {
 
 setInterval(updateClock, 1000);
 updateClock();
+
+
+/*stop watch js start*/
+// Stopwatch Variables
+let stopwatchInterval;
+let elapsedTime = 0; // in ms
+let isRunning = false;
+
+function updateStopwatch() {
+  let hours = Math.floor(elapsedTime / 3600000);
+  let minutes = Math.floor((elapsedTime % 3600000) / 60000);
+  let seconds = Math.floor((elapsedTime % 60000) / 1000);
+
+  hours = String(hours).padStart(2, '0');
+  minutes = String(minutes).padStart(2, '0');
+  seconds = String(seconds).padStart(2, '0');
+
+  document.getElementById("stopwatchDisplay").textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+function startStopwatch() {
+  if (!isRunning) {
+    isRunning = true;
+    const startTime = Date.now() - elapsedTime;
+
+    stopwatchInterval = setInterval(() => {
+      elapsedTime = Date.now() - startTime;
+      updateStopwatch();
+    }, 1000);
+  }
+}
+
+function stopStopwatch() {
+  if (isRunning) {
+    isRunning = false;
+    clearInterval(stopwatchInterval);
+  }
+}
+
+function resetStopwatch() {
+  isRunning = false;
+  clearInterval(stopwatchInterval);
+  elapsedTime = 0;
+  updateStopwatch();
+}
+/*stop watch js end*/
+
+/*timer js  start*/
+// Timer Variables
+let timerInterval;
+let timerTime = 0; // in ms
+let isTimerRunning = false;
+
+function updateTimerDisplay() {
+  let hours = Math.floor(timerTime / 3600);
+  let minutes = Math.floor((timerTime % 3600) / 60);
+  let seconds = timerTime % 60;
+
+  hours = String(hours).padStart(2, '0');
+  minutes = String(minutes).padStart(2, '0');
+  seconds = String(seconds).padStart(2, '0');
+
+  document.getElementById("timerDisplay").textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+function startTimer() {
+  if (!isTimerRunning) {
+    let h = parseInt(document.getElementById("timerHours").value) || 0;
+    let m = parseInt(document.getElementById("timerMinutes").value) || 0;
+    let s = parseInt(document.getElementById("timerSeconds").value) || 0;
+
+    if (h === 0 && m === 0 && s === 0 && timerTime === 0) {
+      alert("Please set a valid timer.");
+      return;
+    }
+
+    if (timerTime === 0) {
+      timerTime = h * 3600 + m * 60 + s;
+    }
+
+    isTimerRunning = true;
+
+    timerInterval = setInterval(() => {
+      if (timerTime > 0) {
+        timerTime--;
+        updateTimerDisplay();
+      } else {
+        clearInterval(timerInterval);
+        isTimerRunning = false;
+        alert("⏰ Timer Finished!");
+      }
+    }, 1000);
+  }
+}
+
+function stopTimer() {
+  if (isTimerRunning) {
+    clearInterval(timerInterval);
+    isTimerRunning = false;
+  }
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  isTimerRunning = false;
+  timerTime = 0;
+  updateTimerDisplay();
+  document.getElementById("timerHours").value = "";
+  document.getElementById("timerMinutes").value = "";
+  document.getElementById("timerSeconds").value = "";
+}
+/*timer ja end*/
 
 // Tab Switching
 const footerItems = document.querySelectorAll('.footer-item');
